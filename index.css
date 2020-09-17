@@ -1,0 +1,506 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background: #f2f2f2;
+}
+html, body {
+    width: 100%;
+    height: 100%;
+  }
+
+/* Navigation */
+nav{
+    background: #1b1b1b;
+}
+
+nav:after{
+    content: '';
+    clear: both;
+    display: table;
+}
+
+nav .logo{
+    float: left;
+    color: white;
+    font-size: 27px;
+    font-weight: 600;
+    line-height: 70px;
+    padding-left: 60px;
+}
+
+nav ul{
+    float: right;
+    list-style: none;
+    margin-right: 40px;
+    position: relative;
+}
+
+nav ul li{
+    float: left;
+    display: inline-block;
+    background: #1b1b1b;;
+    margin: 0 5px;
+}
+
+nav ul li a{
+    color: white;
+    text-decoration: none;
+    line-height: 70px;
+    font-size: 18px;
+    padding: 8px 15px;
+}
+
+nav ul li a:hover{
+    color: #5995fd;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #33ffff,
+                0 0 5px #66ffff;
+}
+
+nav ul ul li a:hover{
+    color: #5995fd;
+    box-shadow: none;
+}
+
+nav ul ul{
+    position: absolute;
+    top: 90px;
+    border-top: 3px solid cyan;
+    opacity: 0;
+    visibility: hidden;
+    transition: top .3s;
+}
+
+nav ul ul ul{
+    border-top: none;
+}
+
+nav ul li:hover > ul{
+    top: 70px;
+    opacity: 1;
+    visibility: visible;
+}
+
+nav ul ul li{
+    position: relative;
+    margin: 0px;
+    width: 155px;
+    float: none;
+    display: list-item;
+    border-bottom: 1px solid rgba(0,0,0,0,.3);
+}
+
+nav ul ul li a{
+    line-height: 50px;
+}
+
+nav ul ul ul li{
+    position: relative;
+    top: -70px;
+    left: 150px;
+}
+
+.fa-plus{
+    margin-left: 40px;
+    font-size: 15px;
+}
+
+.show,.icon,input{
+    display: none;
+}
+
+@media all and (max-width: 968px){
+    nav ul{
+        margin-right: 0px;
+        float: left;
+    }
+    nav .logo{
+        padding-left: 30px;
+        width: 100%;
+    }
+    nav ul li, nav ul ul li{
+        display: block;
+        width: 100%;
+    }
+    nav ul ul{
+        top: 70px;
+        position: static;
+        border-top: none;
+        float: none;
+        display: none;
+        opacity: 1;
+        visibility: visible;
+    }
+    nav ul ul ul li{
+        position: static;
+    }
+    nav ul ul li{
+        border-bottom: 0px;
+    }
+    nav ul ul a{
+        padding-left: 40px;
+    }
+    nav ul ul ul a{
+        padding-left: 80px;
+    }
+    .show{
+        display: block;
+        color: white;
+        font-size: 18px;
+        padding: 0 20px;
+        line-height: 70px;
+        cursor: pointer;
+    }
+    .show:hover{
+        color: cyan;
+    }
+    .icon{
+        display: block;
+        color: white;
+        position: absolute;
+        right: 40px;
+        line-height: 70px;
+        font-size: 25px;
+        cursor: pointer;
+    }
+    nav ul li a:hover{
+        box-shadow: none;
+    }
+    .show + a,ul{
+        display: none;
+    }
+    [id^=btn]:checked + ul{
+        display: block;
+    }
+}
+
+
+/* Text */
+ .occupy{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    background: black;
+}
+
+.text{
+    padding: 3vw;
+}
+
+.abc{
+    margin: 0;
+    padding: 0;
+    font-size: 2vw;
+    position: relative;
+    -webkit-box-reflect: below -12px linear-gradient(transparent, rgba(0,0,0,0.2));
+    
+    
+}
+.abc span{
+    position: relative;
+    display: inline-block;
+    animation: animate 3s ease-in-out infinite;
+    animation-delay: calc(0.1s * var(--i));
+    color: #fff;
+}
+
+@keyframes animate
+{
+    0%
+    {
+        transform: translateY(0px);
+    }
+    20%
+    {
+        transform: translateY(-20px);
+    }
+    40%,100%
+    {
+        transform: translateY(0px);
+    }
+}
+
+.para{
+    margin: 0;
+    padding: 0;
+    font-size: 3vw;
+    text-align: center;
+    margin-top: 60px ;
+    color: #fff;
+    
+}
+
+/* .time{
+    width: 30%;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+  
+  .searchbox{
+    width: 100%;
+    position: relative;
+    display: flex;
+  }
+  
+  .search{
+    width: 100%;
+    border: 3px solid #fd5e53;
+    border-right: none;
+    padding: 5px;
+    height: 20px;
+    
+    outline: none;
+    color: #9dbfaf;
+  }
+  
+  .searchbox:focus{
+    color: #000;
+    box-shadow: 0 0 5px #fd5e53;
+  }
+  
+  .searchbtn{
+    width: 40px;
+    height: 36px;
+    border: 1px solid #fd5e53;
+    background: #fd5e53;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 20px;
+  } */
+
+
+/* Box */
+.box
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #222;
+    min-height: 100vh;
+}
+.container
+{
+    position: relative;
+    width: 1000px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 20px;
+}
+.container .card
+{
+    position: relative;
+    height: 250px;
+    background: #fff;
+    display: flex;
+    width: 45%;
+    margin: 30px 0;
+}
+.container .card .imgBx
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #333;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: 0.5s ease-in-out;
+}
+.container .card:hover .imgBx
+{
+    width: 150px;
+    height: 150px;
+    left: -75px;
+    top: calc(50% - 75px);
+    transition: 0.5s ease-in-out;
+    background: #ff0057;
+}
+.container .card .imgBx:before
+{
+    content: attr(data-text);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 6em;
+    color: rgba(255,255,255,.05);
+    font-weight: 700;
+}
+.container .card .imgBx img
+{
+    max-width: 100px;
+    transition: 0.5s ease-in-out;
+}
+.container .card:hover .imgBx img
+{
+    max-width: 75px;
+}
+.container .card .content
+{
+    position: absolute;
+    right: 0;
+    width: calc(100% - 75px);
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container .card .content h3
+{
+    margin-bottom: 5px;
+    font-size: 24px;
+}
+.container .card .content a
+{
+    display: inline-block;
+    margin-top: 10px;
+    padding: 5px 10px;
+    background: #333;
+    text-decoration: none;
+    color: #fff;
+}
+@media (max-width: 992px)
+{
+    .container
+    {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+    .container .card
+    {
+        width: 400px;
+    }
+}
+@media (max-width: 768px)
+{
+    .container .card
+    {
+        max-width: 300px;
+        flex-direction: column;
+        height: auto;
+    }
+    .container .card .imgBx 
+    {
+        position: relative;
+    }
+    .container .card .imgBx,
+    .container .card:hover .imgBx
+    {
+        width: 100%;
+        height: 200px;
+        left: 0;
+    }
+    .container .card .imgBx img,
+    .container .card:hover .imgBx img
+    {
+        max-width: 100px;
+    }
+    .container .card .content
+    {
+        position: relative;
+        width: 100%;
+    }
+}
+
+.footer{
+    width: 100%;
+    background: #00121b;
+    display: block;
+}
+
+.inner-footer{
+    width: 95%;
+    margin: auto;
+    padding: 30px 10px;
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    justify-content: center;
+}
+
+.footer-items{
+    width: 25%;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    
+}
+.info{
+    margin: 10px 0;
+    color: #fff;
+    font-size: 30px;
+    font-weight: lighter;
+    text-transform: uppercase;
+}
+.tc{
+    color: #fff;
+    font-size: 20px;
+}
+
+.social-media{
+    width: 100%;
+    color: #fff;
+    text-align: center;
+    float: right;
+}
+
+.social-media a{
+    text-decoration: none;
+}
+
+.social-media i{
+    height: 30px;
+    width: 30px;
+    margin: 20px 5px;
+    padding: 10px;
+    color: #fff;
+    border-radius: 50%;
+    border: 1px solid gray;
+    transition: 0.3s;
+}
+
+.social-media i:hover{
+    background: gray;
+}
+
+.footer-bottom{
+    padding: 10px;
+    background: #3d545f;
+    color: #fff;
+    font-size: 12px;
+}
+
+@media screen and (max-width: 1085px){
+    .footer-items{
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .footer-items{
+        width: 100%;
+    }
+}
+© 2020 GitHub, Inc.
